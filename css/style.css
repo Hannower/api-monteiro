@@ -1,0 +1,176 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background-color: #f0f4f8;
+}
+
+/* Header */
+header {
+    background-color: #0d47a1;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 {
+    color: #ffffff;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Formulário */
+.formulario {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+.formulário h2 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+/* Espaçamento entre seções */
+.dados-pessoais,
+.endereco {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    color: #000000;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputs */
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Efeito ao focar */
+input:focus {
+    border-color: #0d47a1;
+    box-shadow: 0 0 5px rgba(13, 71, 161, 0.3);
+}
+
+/* Botões */
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Estilo base dos botões */
+button {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0d47a1;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover */
+button:hover {
+    background-color: #1565c0;
+}
+
+/* Botão limpar (variação) */
+.btn-limpar {
+    background-color: #000000;
+}
+
+.btn-limpar:hover {
+    background-color: #333333;
+}
+
+/* Tabela */
+main {
+    padding: 30px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+thead tr {
+    background-color: #0d47a1;
+    color: #ffffff;
+}
+
+thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f4f8;
+}
+
+tbody tr:hover {
+    background-color: #e3eaf5;
+}
+
+tbody td {
+    padding: 11px 16px;
+    color: #333333;
+    font-size: 14px;
+}
