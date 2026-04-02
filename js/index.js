@@ -1,5 +1,5 @@
 const url = 'https://69cc26790b417a19e07be0d9.mockapi.io/user/users';
-
+const main = document.querySelector('main');
 // Buscando os dados da API com fetch
 
 fetch(url)
@@ -9,8 +9,6 @@ fetch(url)
     });
 
 function exibirDados(dados) {
-    const main = document.querySelector('main');
-
     // Cria a tabela
     const tabela = document.createElement('table');
     
@@ -74,3 +72,33 @@ function exibirDados(dados) {
     // Insere a tabela no main
     main.appendChild(tabela);
 }
+
+// Buscar usuário pelo ID
+
+const inputPesquisaId = document.querySelector('#input-pesquisa');
+const btnPesquisaId = document.querySelector('#btn-buscar');
+
+btnPesquisaId.addEventListener('click', () => {
+    const urlId = `https://69cc26790b417a19e07be0d9.mockapi.io/user/users/${inputPesquisaId.value}`
+
+    fetch(urlId)
+        .then(response => {
+            if(!response.ok) {
+                throw new Error(`Erro HTTP: ${response.status}`);
+            }
+            return response.json(); 
+        })  
+        .then(dados => {
+            const listaUsuario = [];
+            listaUsuario.push(dados);
+
+            main.innerHTML = '';
+            exibirDados(listaUsuario);
+        })
+        .catch(erro => {
+            console.error(erro);
+            alert('Usuário não encontrado!');
+            inputPesquisaId.value = '';
+        })
+
+})

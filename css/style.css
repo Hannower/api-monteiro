@@ -37,6 +37,21 @@ header a {
     font-weight: bold;
 }
 
+/* Campo buscar */
+
+.campo-buscar {
+    margin: 1rem;
+    text-align: center;
+
+    input {
+        width: 13rem;
+    }
+}
+
+.btn-buscar {
+    width: 5rem;
+}
+
 /* Container principal */
 .container {
     display: flex;
