@@ -2,11 +2,15 @@ const url = 'https://69cc26790b417a19e07be0d9.mockapi.io/user/users';
 const main = document.querySelector('main');
 // Buscando os dados da API com fetch
 
-fetch(url)
+function carregarUsuarios() {
+    fetch(url)
     .then(response => response.json())
     .then(dados => {
         exibirDados(dados);
     });
+}
+
+carregarUsuarios();
 
 function exibirDados(dados) {
     // Cria a tabela
@@ -26,7 +30,8 @@ function exibirDados(dados) {
         "Complemento", 
         "Bairro", 
         "Cidade", 
-        "UF"
+        "UF",
+        "Ações"
     ];
 
     colunas.forEach((texto) => {
@@ -52,7 +57,7 @@ function exibirDados(dados) {
         "complemento", 
         "bairro", 
         "cidade", 
-        "uf",
+        "uf"
     ];
 
     dados.forEach((usuario) => {
@@ -64,6 +69,28 @@ function exibirDados(dados) {
             linha.appendChild(td);
         })
 
+        const btnExcluir = document.createElement('button');
+        btnExcluir.textContent = 'EXCLUIR';
+        btnExcluir.classList= 'btn-excluir';
+        linha.appendChild(btnExcluir);
+
+        btnExcluir.addEventListener('click', () => {
+            const urlExcluir = `https://69cc26790b417a19e07be0d9.mockapi.io/user/users/${usuario.id}`;
+
+            const confirma = confirm('Deseja excluir o usuário?')
+
+            if (!confirma) return;
+
+            fetch(urlExcluir, {
+                method: "DELETE"
+            })
+            .then(response => response.json())
+            .then(() => {
+                main.innerHTML = '';
+                carregarUsuarios()
+            })
+        })
+
         tbody.appendChild(linha);
     })
 
@@ -72,6 +99,8 @@ function exibirDados(dados) {
     // Insere a tabela no main
     main.appendChild(tabela);
 }
+
+
 
 // Buscar usuário pelo ID
 
@@ -94,6 +123,7 @@ btnPesquisaId.addEventListener('click', () => {
 
             main.innerHTML = '';
             exibirDados(listaUsuario);
+            inputPesquisaId.value = '';
         })
         .catch(erro => {
             console.error(erro);
