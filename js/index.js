@@ -1,5 +1,6 @@
 const url = 'https://69cc26790b417a19e07be0d9.mockapi.io/user/users';
 const main = document.querySelector('main');
+const modal = document.querySelector('#modal-edicao');
 // Buscando os dados da API com fetch
 
 function carregarUsuarios() {
@@ -62,17 +63,75 @@ function exibirDados(dados) {
 
     dados.forEach((usuario) => {
         const linha = document.createElement('tr');
-
+        
         chaves.forEach((chave) => {
             const td = document.createElement('td');
             td.textContent = usuario[chave];
             linha.appendChild(td);
         })
+        
+        const divBotoes = document.createElement('div');
+        divBotoes.classList = 'botoes';
+
+        const tdAcoes = document.createElement('td');
+        tdAcoes.classList = 'td-acoes'
+        tdAcoes.appendChild(divBotoes);
+        linha.appendChild(tdAcoes);
 
         const btnExcluir = document.createElement('button');
         btnExcluir.textContent = 'EXCLUIR';
         btnExcluir.classList= 'btn-excluir';
-        linha.appendChild(btnExcluir);
+        divBotoes.appendChild(btnExcluir);
+
+        const btnEditar = document.createElement('button');
+        btnEditar.textContent = 'EDITAR';
+        btnEditar.classList = 'btn-editar';
+        divBotoes.appendChild(btnEditar);
+
+        btnEditar.addEventListener('click', () => {
+            modal.showModal();
+
+            const formModal = document.querySelector('#form-modal');
+            const btnCancelarModal = document.querySelector("#btn-cancelar");
+            const btnSalvarModal = document.querySelector('#btn-salvar');
+
+            formModal.nome.value = usuario.nome;
+            formModal.email.value = usuario.email;
+            formModal.senha.value = usuario.senha;
+            formModal.cep.value = usuario.cep;
+            formModal.complemento.value = usuario.complemento;
+            formModal.numero.value = usuario.numero;
+
+            btnCancelarModal.addEventListener('click', () => {
+                modal.close();
+            })
+
+            btnSalvarModal.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const urlModal =  `https://69cc26790b417a19e07be0d9.mockapi.io/user/users/${usuario.id}`;
+
+                const formDados = new FormData(formModal);
+                const dadosAlterados = Object.fromEntries(formDados);
+
+                fetch(urlModal, {
+                    method: "PUT",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify (dadosAlterados)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro HTTP: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(() => {
+                    main.innerHTML = '';
+                    modal.close();
+                    carregarUsuarios();
+                })
+            })        
+        })
 
         btnExcluir.addEventListener('click', () => {
             const urlExcluir = `https://69cc26790b417a19e07be0d9.mockapi.io/user/users/${usuario.id}`;

@@ -195,8 +195,61 @@ tbody td {
     width: auto;
     transition: 0.5s;
     margin: 0.5rem;
+    font-size: 11px;
 }
 
 .btn-excluir:hover {
     background-color: #972020;
+}
+
+.btn-editar {
+    background-color: #000000;
+    width: auto;
+    margin: 0.5rem;
+    transition: 0.5s;
+    font-size: 11px;
+}
+
+.btn-editar:hover {
+    background-color: #484444;
+}
+
+/* Modal */
+.modal-edicao {
+    border: none;
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-edicao::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.form-modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-modal h2 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+.form-modal button {
+    margin-top: 10px;
+}
+
+#btn-cancelar {
+    background-color: #000000;
+}
+
+#btn-cancelar:hover {
+    background-color: #333333;
 }
