@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
 </head>
 
 <body>
@@ -18,121 +19,13 @@
     </header>
 
     <main class="container">
-        <form class="formulario" id="formulario">
 
-            <h2>Dados pessoais</h2>
+        <div class="botoes-cadastro">
+            <button class="btn-usuario"><a href="./cadastro-usuario.html">USUÁRIO</a></button>
+            <button class="btn-produto"><a href="./cadastro-produto.html">PRODUTO</a></button>
+        </div>
 
-            <div class="dados-pessoais">
-
-                <label for="nome">Nome Completo</label>
-                <input 
-                    type="text" 
-                    name="nome"
-                    id="nome" 
-                    class="nome" 
-                    placeholder="Insira seu nome completo"
-                >
-    
-                <label for="email">E-mail</label>
-                <input 
-                    type="text"
-                    name="email"
-                    id="email"
-                    class="email"
-                    placeholder="Insira seu email"
-                >
-    
-                <label for="senha">Senha</label>
-                <input 
-                    type="text"
-                    name="senha"
-                    id="senha"
-                    class="senha"
-                    placeholder="Insira sua senha"
-                >
-
-            </div>
-
-            <div class="endereco">
-
-                <h2>Endereço</h2>
-
-                <label for="cep">CEP</label>
-                <input 
-                    type="number"
-                    name="cep"
-                    id="cep"
-                    class="cep"
-                    placeholder="Ex: 88888888"
-                >
-
-                <label for="logradouro">Logradouro</label>
-                <input 
-                    type="text" 
-                    name="logradouro"
-                    id="logradouro" 
-                    class="logradouro" 
-                    placeholder="Rua, Avenida..."
-                >
-
-                <label for="numero">Numero</label>
-                <input 
-                    type="number"
-                    name="numero"
-                    id="numero"
-                    class="numero"
-                    placeholder="Nº"
-                >
-
-                <label for="complemento">Complemento</label>
-                <input 
-                    type="text"
-                    name="complemento"
-                    id="complemento"
-                    class="complemento"
-                    placeholder="Ap, bloco..."
-                >
-
-                <label for="bairro">Bairro</label>
-                <input 
-                    type="text"
-                    name="bairro"
-                    id="bairro"
-                    class="bairro"
-                    placeholder="Bairro"
-                >
-
-                <label for="cidade">Cidade</label>
-                <input 
-                    type="text"
-                    name="cidade"
-                    id="cidade"
-                    class="cidade"
-                    placeholder="cidade"
-                >
-
-                <label for="uf">UF</label>
-                <input 
-                    type="text"
-                    name="uf"
-                    id="uf"
-                    class="uf"
-                    placeholder="uf"
-                >
-
-            </div>
-
-            <div class="botoes">
-
-                <button class="btn-cadastrar" id="btn-cadastrar">Cadastrar</button>
-                <button class="btn-limpar" id="btn-limpar">Limpar</button>
-
-            </div>
-
-        </form>
- 
     </main>
 </body>
-<script src="./js/cadastro.js"></script>
 
 </html>

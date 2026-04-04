@@ -253,3 +253,36 @@ tbody td {
 #btn-cancelar:hover {
     background-color: #333333;
 }
+
+.botoes-cadastro .botoes-listar {
+    display: flex;
+    gap: 4rem;
+}
+
+.btn-usuario a {
+    font-style: none;
+    color: #ffffff;
+    list-style: none;
+    text-decoration: none;
+    font-size: large;
+    margin: 1rem
+}
+
+.btn-produto a {
+    font-style: none;
+    color: #ffffff;
+    list-style: none;
+    text-decoration: none;
+    font-size: large;
+    margin: 1rem
+}
+
+.btn-listar a {
+    font-style: none;
+    color: #ffffff;
+    list-style: none;
+    text-decoration: none;
+    font-size: large;
+    margin: 1rem;
+    width: auto;
+}
