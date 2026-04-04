@@ -108,8 +108,6 @@ input:focus {
 /* Botões */
 .botoes {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
 }
 
 /* Estilo base dos botões */
@@ -285,4 +283,21 @@ tbody td {
     font-size: large;
     margin: 1rem;
     width: auto;
+}
+
+/* Formulário de Produtos */
+.form-cadastro-produtos {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+}
+
+.btn-cadastrar-produto {
+    margin-top: 1rem;
+    align-self: center;
 }

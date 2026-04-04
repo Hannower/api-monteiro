@@ -5,9 +5,9 @@ const modal = document.querySelector('#modal-edicao');
 
 function carregarUsuarios() {
     fetch(url)
-    .then(response => response.json())
-    .then(dados => {
-        exibirDados(dados);
+        .then(response => response.json())
+        .then(dados => {
+            exibirDados(dados);
     });
 }
 
@@ -146,7 +146,7 @@ function exibirDados(dados) {
             .then(response => response.json())
             .then(() => {
                 main.innerHTML = '';
-                carregarUsuarios()
+                carregarUsuarios();
             })
         })
 

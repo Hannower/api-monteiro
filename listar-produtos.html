@@ -15,5 +15,63 @@
         </ul>
     </header>
 
+     <div class="campo-buscar" id="campo-buscar">
+        <input 
+            type="number" 
+            placeholder="Busque um produto pelo ID"
+            id="input-pesquisa"    
+        >
+        <button class="btn-buscar" id="btn-buscar">Buscar</button>
+    </div>
+    
+
+    <main>
+        <!-- Os produtos serão exibidos aqui. -->
+    </main>
+
+    <dialog class="modal-edicao" id="modal-edicao">
+        
+        <form class="form-modal">
+
+            <label for="produto-modal">Produto</label>
+            <input 
+                type="text"
+                name="produto"
+                id="produto-modal"
+                class="produto-modal"
+            >
+
+            <label for="preco-modal">Preço</label>
+            <input 
+                type="number"
+                name="preco"
+                id="preco-modal"
+                class="preco-modal"
+            >
+
+            <label for="estoque-modal">Estoque</label>
+            <input 
+                type="number"
+                name="estoque"
+                id="estoque-modal"
+                class="estoque-modal"
+            >
+
+            <label for="descricao-modal">Descrição</label>
+            <input 
+                type="text"
+                name="descricao"
+                id="descricao-modal"
+                class="descricao-modal"
+            >
+
+            <button class="btn-salvar">Salvar</button>
+            <button class="btn-cancelar">Cancelar</button>
+
+        </form>
+
+    </dialog>
+
 </body>
+<script src="./js/listar-produto.js"></script>
 </html>
